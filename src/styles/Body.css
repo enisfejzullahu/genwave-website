@@ -1,0 +1,191 @@
+/* src/components/Body.css */
+
+.top-part {
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center the items vertically */
+  justify-content: center; /* Center the content horizontally */
+  border-radius: 20px; /* Rounded corners */
+  padding: 5px 15px; /* Padding inside the border */
+  background: white; /* Background for inner content */
+  position: relative; /* Required for the pseudo-element */
+  margin: 10px auto; /* Center the container and add space above and below */
+  width: fit-content; /* Set width to fit the content */
+  border: 2px;
+}
+
+/* Gradient border effect */
+.top-part::before {
+  content: ""; /* Required for pseudo-element */
+  position: absolute; /* Position it absolutely */
+  top: -1.5px; /* Adjust to move border up */
+  left: 50px; /* Adjust to move border left */
+  right: -1.5px; /* Adjust to move border right */
+  bottom: -1.5px; /* Adjust to move border down */
+  border-radius: 25px; /* Match the border radius (slightly larger) */
+  background: linear-gradient(90deg, #fff 15%, #145aff); /* Gradient color */
+  z-index: -1; /* Send it behind the content */
+}
+
+.top-part img {
+  max-width: 50px; /* Set a fixed width for the image */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 10px; /* Space between image and text */
+}
+
+.top-part p {
+  font-size: 0.75rem; /* Adjust text size */
+  margin: 0; /* Remove default margin */
+  color: #060a13;
+  letter-spacing: 1px;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  line-height: 19px;
+}
+.top-image {
+  margin: 20px 0; /* Space above and below the image */
+}
+
+.top-image img {
+  max-width: 100%; /* Responsive image */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.bordered-text {
+  display: inline-block; /* Center the bordered text */
+  border: 2px solid #333; /* Border color and thickness */
+  border-radius: 10px; /* Rounded corners */
+  padding: 10px 20px; /* Padding inside the border */
+  margin: 20px 0; /* Space above and below */
+  background-color: #f9f9f9; /* Background color of the bordered text */
+}
+
+.large-text {
+  font-size: 3.75rem;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  line-height: 72px;
+}
+
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 135, 255, 1),
+    rgba(98, 218, 182, 1)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent; /* Fallback for older browsers */
+}
+
+.buy-or-book {
+  display: flex; /* Align items in a row */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  margin: 0px 0; /* Optional: add some margin */
+}
+
+.demo-link {
+  color: #0676db; /* Blue color for the text */
+  text-decoration: underline; /* Underline the text */
+  text-underline-offset: 5px; /* Adjust this value to control space between text and underline */
+  margin-left: 25px; /* Add space between the button and the paragraph */
+  cursor: pointer; /* Change cursor to pointer to indicate clickable */
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.group-photos img {
+  width: 85%;
+  margin-top: 40px;
+}
+
+/* Media Queries */
+
+/* For Tablet Devices (up to 768px width) */
+@media screen and (max-width: 768px) {
+  .top-part {
+    padding: 5px 10px; /* Reduce padding */
+  }
+
+  .top-part::before {
+    top: -1px; /* Adjust to move border up */
+    left: 50px; /* Adjust to move border left */
+    right: -1px; /* Adjust to move border right */
+    bottom: -1.5px; /* Adjust to move border down */
+  }
+
+  .top-part img {
+    max-width: 40px; /* Reduce image size */
+  }
+
+  .top-part p {
+    font-size: 0.65rem; /* Reduce text size */
+    line-height: 16px; /* Adjust line height */
+  }
+
+  .top-image img {
+    max-width: 90%; /* Make image smaller */
+  }
+
+  .group-photos img {
+    width: 100%; /* Make photos take up full width */
+    margin-top: 20px; /* Reduce top margin */
+  }
+
+  .large-text {
+    font-size: 2.5rem;
+    line-height: 55px;
+  }
+
+  .buy-or-book {
+    flex-direction: column; /* Stack the button and paragraph vertically */
+  }
+
+  .demo-link {
+    font-size: 16px; /* Reduce text size */
+    margin-left: 10px; /* Adjust spacing */
+  }
+}
+
+/* For Mobile Devices (up to 480px width) */
+@media screen and (max-width: 480px) {
+  .top-part {
+    padding: 5px 8px; /* Reduce padding further */
+  }
+
+  .top-part img {
+    max-width: 30px; /* Further reduce image size */
+  }
+
+  .top-part p {
+    font-size: 0.55rem; /* Further reduce text size */
+    line-height: 14px; /* Adjust line height */
+  }
+
+  .top-image img {
+    max-width: 80%; /* Further reduce image size */
+  }
+
+  .group-photos img {
+    width: 100%; /* Keep photos taking up full width */
+    margin-top: 10px; /* Reduce margin */
+  }
+
+  .large-text {
+    font-size: 2rem; /* Smaller text size for mobile */
+    line-height: 45px;
+  }
+
+  .buy-or-book {
+    flex-direction: column; /* Stack vertically for mobile */
+    align-items: flex-start; /* Align the items to the left */
+  }
+
+  .demo-link {
+    font-size: 14px; /* Reduce font size for mobile */
+    margin-left: 5px; /* Reduce margin */
+  }
+}

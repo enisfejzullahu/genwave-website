@@ -1,6 +1,15 @@
 .App {
   text-align: center;
+  position: relative; /* Allows for absolute positioning within */
+  min-height: 100vh; /* Ensures full viewport height */
+  
+  /* Background images */
+  background-image: url('/public/left-bg.svg'), url('/public/right-bg.svg'); /* Replace with actual paths */
+  background-position: top left, top right; /* Positions images in top corners */
+  background-repeat: no-repeat; /* No repeating of images */
+  background-size: 50% auto, 60% auto; /* Makes left image larger than the right */
 }
+
 
 .App-logo {
   height: 40vmin;

@@ -1,0 +1,58 @@
+/* Container for all the boxes */
+.hero-card-container {
+  display: flex; /* Use flexbox for row layout */
+  justify-content: space-between; /* Space the items evenly */
+  gap: 20px; /* Optional: Space between the boxes */
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  padding: 20px;
+  margin-top: 30px;
+}
+
+/* Individual hero card box */
+.hero-card {
+  display: flex;
+  flex-direction: column; /* Stack the image and text vertically */
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+  width: 150px; /* Width of each card */
+  padding: 15px;
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+  background-color: #fff; /* White background for each box */
+  transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.hero-card:hover {
+  transform: translateY(-5px); /* Slight hover effect */
+}
+
+/* Style for the images */
+.hero-card-img {
+  width: 5rem; /* Make the image fill the width of the box */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Optional: Round the image corners */
+}
+
+/* Text beneath the image */
+.hero-card-text {
+  font-size: 1rem; /* Smaller font size */
+  color: #12151a; /* Dark text color */
+  margin-top: 10px; /* Space between image and text */
+  text-align: center; /* Center the text */
+  font-weight: 600; /* Slightly bolder text */
+  font-family: "Inter", sans-serif;
+}
+
+/* Make sure everything adjusts nicely for smaller screens */
+@media (max-width: 768px) {
+  .hero-card-container {
+    flex-direction: column; /* Stack the cards vertically on smaller screens */
+    align-items: center; /* Center the cards */
+  }
+
+  .hero-card {
+    width: 100%; /* Make each card full width on small screens */
+    max-width: 300px; /* Limit max width of each card */
+    margin-bottom: 20px; /* Add space between stacked cards */
+  }
+}
